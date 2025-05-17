@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offer | Event 88</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JKCN12FEX"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5JKCN12FEX');
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #FF2D55;
+            --secondary-color: #25F4EE;
+            --dark-color: #121212;
+            --light-color: #FFF;
+            --accent-color: #FE2C55;
+            --gradient-bg: linear-gradient(135deg, #121212 0%, #1E1E1E 100%);
+            --glass-bg: rgba(30, 30, 30, 0.7);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--gradient-bg);
+            color: var(--light-color);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .bg-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .bg-blur {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.2;
+        }
+        
+        .bg-blur-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--secondary-color);
+            top: -100px;
+            left: -50px;
+        }
+        
+        .bg-blur-2 {
+            width: 250px;
+            height: 250px;
+            background: var(--primary-color);
+            bottom: -50px;
+            right: -50px;
+        }
+        
+        .bg-blur-3 {
+            width: 200px;
+            height: 200px;
+            background: #7B61FF;
+            top: 50%;
+            left: 70%;
+        }
+        
+        .container {
+            max-width: 450px;
+            width: 90%;
+            background: var(--glass-bg);
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+        }
+        
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .logo-text {
+            font-size: 38px;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -1px;
+        }
+        
+        .logo-badge {
+            position: absolute;
+            top: -8px;
+            right: -25px;
+            background: linear-gradient(135deg, var(--accent-color), #FF8A80);
+            color: white;
+            font-size: 12px;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 3px 10px rgba(254, 44, 85, 0.4);
+        }
+        
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+            background: linear-gradient(90deg, #FFF, rgba(255, 255, 255, 0.8));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+        
+        .offer-text {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .countdown-container {
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .countdown-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+        
+        .countdown-label {
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .countdown {
+            font-size: 42px;
+            font-weight: 700;
+            text-align: center;
+            color: var(--light-color);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 2px;
+        }
+        
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            border: none;
+            border-radius: 16px;
+            padding: 18px 20px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(255, 45, 85, 0.35);
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 45, 85, 0.5);
+        }
+        
+        .cta-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 5px 15px rgba(255, 45, 85, 0.4);
+        }
+        
+        .cta-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .notice {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 8px 25px rgba(255, 45, 85, 0.35);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 12px 30px rgba(255, 45, 85, 0.5);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 8px 25px rgba(255, 45, 85, 0.35);
+            }
+        }
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% { transform: translate(var(--x), var(--y)) rotate(var(--r)); opacity: 0; }
+        }
+        
+        /* Pop-up Styles */
+        .popup-window {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.75);
+            z-index: 9999;
+            opacity: 1;
+            backdrop-filter: blur(5px);
+            transition: opacity 0.3s ease;
+        }
+        
+        .main-notice {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+        
+        .main-notice:hover {
+            transform: scale(1.02);
+        }
+        
+        .ic-close {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #fff;
+            color: #000;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-size: 18px;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+        
+        .ic-close:hover {
+            transform: scale(1.1);
+            background: #f8f8f8;
+        }
+        
+        .notice-content {
+        position: relative;
+        padding-top: 180%;
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: 0;
+        pointer-events: none;
+        }
+
+        .notice-text {
+        position: absolute;
+        top: 600px;
+        left: 2%;
+        padding: 20px;
+        color: white;
+        z-index: 1;
+        text-align: center;
+        font-size: 13px;
+        background-color: #00000036;
+        border-radius: 10px;
+        }
+
+        
+        .notice-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        @keyframes gameani {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        /* Feature icons */
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin: 25px 0;
+        }
+        
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+        
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--secondary-color);
+        }
+        
+        .feature-text {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 22px;
+            }
+            
+            .offer-text {
+                font-size: 16px;
+            }
+            
+            .countdown {
+                font-size: 36px;
+            }
+            
+            .cta-button {
+                padding: 16px 20px;
+                font-size: 16px;
+            }
+        }
+
+        .wrapper {
+            display: flex
+        ;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px;
+        }
+        @media (max-width: 767px) {
+        .card {
+            width: calc(50% - 10px);
+        }
+        }
+    .card .brand-logo {
+        position: relative;
+        align-content: center;
+        max-width: 100px;
+        margin-bottom: 10px;
+        display: block;
+        margin-left: 80%;
+        margin-right: auto;
+        border-radius:15px ;
+    }
+    img, iframe {
+        display: block;
+        border: 0;
+    }
+    .card .brand-name {
+        font-size: 10px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+    .card .bonus {
+        font-size: 8px;
+        color: #fff;
+        margin-bottom: 5px;
+    }
+    .claim-btn {
+        font-size: 8px;
+        display: inline-block;
+        margin-top: 8px;
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 6px;
+        text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-elements">
+        <div class="bg-blur bg-blur-1"></div>
+        <div class="bg-blur bg-blur-2"></div>
+        <div class="bg-blur bg-blur-3"></div>
+    </div>
+    
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        
+        <div class="wrapper">
+     <div class="card">
+            <img src="https://res.cloudinary.com/dhlurazyu/image/upload/v1747487627/72480905-23ba-4771-b6c3-977c3339999c_dlh5cj.png" alt="Antbet Logo" class="brand-logo">
+        </div>
+        <!-- Add the remaining cards similarly with button-container -->
+    </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <p class="feature-text">Special Rewards</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <p class="feature-text">Fast Process</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <p class="feature-text">Secure Access</p>
+            </div>
+        </div>
+        
+        <div class="countdown-container">
+            <div class="countdown-label">Offer expires in:</div>
+            <div class="countdown" id="countdown">00:00:00</div>
+        </div>
+        
+        <a href="#" class="cta-button pulse" id="redirect-button">
+            <i class="fas fa-trophy"></i> EVENT 88
+        </a>
+        
+        <p class="notice">By clicking, you agree to our terms and conditions</p>
+    </div>
+
+    <!-- POPUP -->
+        <div id="popupwindow" class="popup-window">
+        <div id="main-notice" class="main-notice">
+            
+            <!-- Close button -->
+            <div class="ic-close" id="popup-close">&times;</div>
+
+            <!-- Notice content with video background -->
+            <div class="notice-content" data-key="NoticeURL1">
+            <video autoplay muted loop playsinline class="background-video">
+                <source src="https://res.cloudinary.com/dhlurazyu/video/upload/v1747486467/truspin_mlpghf.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Optional overlay content inside notice -->
+            <div class="notice-text">
+                <h2>Promo Alert!</h2>
+                <p>Claim your rewards now at TruSpin</p>
+            </div>
+            </div>
+
+        </div>
+        </div>
+
+    <script>
+        // Set your destination URL here
+        const destinationUrl = "https://heylink.me/truspin/";
+        
+        // Update the button href
+        document.getElementById("redirect-button").href = destinationUrl;
+        
+        // Countdown timer function
+        let seconds = 86400; // 24 hours
+        const countdownElement = document.getElementById("countdown");
+        
+        const countdownTimer = setInterval(() => {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const secs = seconds % 60;
+
+            countdownElement.textContent = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+
+            seconds--;
+
+            if (seconds < 0) {
+                clearInterval(countdownTimer);
+                window.location.href = destinationUrl;
+            }
+        }, 1000);
+        
+        // Create floating particles
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 20;
+        
+        for (let i = 0; i < particleCount; i++) {
+            createParticle();
+        }
+        
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Random size between 3px and 15px
+            const size = Math.random() * 12 + 3;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            // Random position
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            
+            // Random opacity
+            particle.style.opacity = Math.random() * 0.3 + 0.1;
+            
+            // Generate random color
+            const colors = [
+                'rgba(255, 45, 85, 0.8)', 
+                'rgba(37, 244, 238, 0.8)', 
+                'rgba(255, 255, 255, 0.5)'
+            ];
+            particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            // Random duration
+            const duration = Math.random() * 15 + 10;
+            
+            // Random movement variables
+            const xMove = Math.random() * 200 - 100;
+            const yMove = Math.random() * 200 - 100;
+            const rotation = Math.random() * 360;
+            
+            // Set CSS variables for the animation
+            particle.style.setProperty('--x', `${xMove}px`);
+            particle.style.setProperty('--y', `${yMove}px`);
+            particle.style.setProperty('--r', `${rotation}deg`);
+            
+            // Apply animation with random duration and delay
+            particle.style.animation = `float ${duration}s ${Math.random() * 5}s infinite`;
+            
+            particlesContainer.appendChild(particle);
+        }
+
+        const button = document.getElementById('redirect-button');
+        const targetUrl = "https://heylink.me/truspin/";
+
+        button.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent direct redirect
+
+            // Send event to Google Analytics
+            gtag('event', 'click', {
+                'event_category': 'CTA',
+                'event_label': 'EVENT 88',
+                'transport_type': 'beacon',
+                'event_callback': function() {
+                    // Redirect after event is sent
+                    window.location.href = targetUrl;
+                }
+            });
+
+            // Fallback redirect if event_callback fails
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 1000);
+        });
+        
+        // Popup handling
+        document.addEventListener("DOMContentLoaded", function () {
+            const popup = document.getElementById("popupwindow");
+            const closeBtn = document.getElementById("popup-close");
+            const mainNotice = document.getElementById("main-notice");
+            const noticeContent = document.querySelector(".notice-content");
+
+            // Close button
+            if (closeBtn && popup) {
+                closeBtn.addEventListener("click", function (e) {
+                    e.stopPropagation(); // Prevent click from triggering parent elements
+                    popup.style.opacity = "0";
+                    setTimeout(() => {
+                        popup.style.display = "none";
+                    }, 300);
+                });
+            }
+
+            // Click anywhere on the notice to redirect
+            if (mainNotice) {
+                noticeContent.addEventListener("click", function () {
+                    window.location.href = targetUrl;
+                });
+            }
+            
+            // Animation for popup
+            mainNotice.style.animation = "gameani 1.5s ease-in-out infinite";
+        });
+    </script>
+</body>
+</html>
