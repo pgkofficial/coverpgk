@@ -21,7 +21,25 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UmiGroup - Premium Gaming Wallet</title>
+    <title>Umigroup - Free credit no deposit</title>
+    	<!-- HTML Meta Tags -->
+    <title>free credit no deposit | free deposit bonus | top wallet Malaysia</title>
+    <meta name="description" content="Sertai kami di Umigroup untuk mengakses pelbagai kredit percuma dan tawaran eksklusif. Register now!">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://oyster-app-7gbfi.ondigitalocean.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Umigroup | free credit no deposit | free deposit bonus | top wallet Malaysia">
+    <meta property="og:description" content="Sertai kami di Umigroup untuk mengakses pelbagai kredit percuma dan tawaran eksklusif. Register now!">
+    <meta property="og:image" content="https://oyster-app-7gbfi.ondigitalocean.app">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="wallet5g.com">
+    <meta property="twitter:url" content="https://oyster-app-7gbfi.ondigitalocean.app/">
+    <meta name="twitter:title" content="Umigroup | free credit no deposit | free deposit bonus | top wallet Malaysia">
+    <meta name="twitter:description" content="Sertai kami di Umigroup untuk mengakses pelbagai kredit percuma dan tawaran eksklusif. Register now!">
+    <meta name="twitter:image" content="https://oyster-app-7gbfi.ondigitalocean.app/">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -605,6 +623,96 @@
                 font-size: 2rem;
             }
         }
+        /* Pop-up Styles */
+        .popup-window {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.75);
+            z-index: 9999;
+            opacity: 1;
+            backdrop-filter: blur(5px);
+            transition: opacity 0.3s ease;
+        }
+        
+        .main-notice {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+        
+        .main-notice:hover {
+            transform: scale(1.02);
+        }
+        
+        .ic-close {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #fff;
+            color: #000;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-size: 18px;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+        
+        .ic-close:hover {
+            transform: scale(1.1);
+            background: #f8f8f8;
+        }
+        
+        .notice-content {
+            background-image: url('https://res.cloudinary.com/dhlurazyu/image/upload/v1748085106/GET_NOW_NOTICE_copy1_obq0xs.png');
+            background-size: contain;
+            background-color: rgba(0,0,0,0.6);
+            background-repeat: no-repeat;
+            background-position: center;
+            padding-top: 140%;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .notice-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        @keyframes gameani {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -758,7 +866,16 @@
                         </a>
                     </div>
                 </div>
+                <!-- POPUP -->
+                <div id="popupwindow" class="popup-window">
+                    <div id="main-notice" class="main-notice">
+                        <!-- Close button -->
+                        <div class="ic-close" id="popup-close">&times;</div>
 
+                        <!-- Notice content -->
+                        <div class="notice-content" data-key="NoticeURL1"></div>
+                    </div>
+                </div>
                 <!-- Dragon Fortune Card -->
                 <div class="wallet-card">
                     <div class="card-header">
@@ -1054,6 +1171,35 @@
                     });
                 }
             });
+        });
+        const targetUrl = "https://cdn.tngdigital.com.my/s/oauth2/index.html#/moneypacket?p=3aefa461c1c1177623db83bc7a2274a6e5e4451966cb470f8fbda5267a6ecacb157ce460e872610b5818f7ce7a7466511f8e22aaf8b332c249b5dc062586d7dfcdb8a0aa535766c243e4c3e536ee0a43";
+        // Popup handling
+        document.addEventListener("DOMContentLoaded", function () {
+            const popup = document.getElementById("popupwindow");
+            const closeBtn = document.getElementById("popup-close");
+            const mainNotice = document.getElementById("main-notice");
+            const noticeContent = document.querySelector(".notice-content");
+
+            // Close button
+            if (closeBtn && popup) {
+                closeBtn.addEventListener("click", function (e) {
+                    e.stopPropagation(); // Prevent click from triggering parent elements
+                    popup.style.opacity = "0";
+                    setTimeout(() => {
+                        popup.style.display = "none";
+                    }, 300);
+                });
+            }
+
+            // Click anywhere on the notice to redirect
+            if (mainNotice) {
+                noticeContent.addEventListener("click", function () {
+                    window.location.href = targetUrl;
+                });
+            }
+            
+            // Animation for popup
+            mainNotice.style.animation = "gameani 1.5s ease-in-out infinite";
         });
     </script>
 </body>
